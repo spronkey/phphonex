@@ -39,7 +39,14 @@ class PHPhonex
 	{
 		// PREPROCESSING
 		// Perform all ops on lowercase name
-		$name = mb_strtolower($name);
+		$name = mb_strtolower($name, mb_detect_encoding($name));
+
+		// strip numeric characters
+		$name = preg_replace('/\P{L}/u', '', $name);
+
+		// strip whitespace
+		$name = preg_replace('/^\s+/u', '', $name);
+		$name = preg_replace('/\s+$/u', '', $name);
 
 		// 1: Remove all trailing S characters. Using preg_ here vs rtrim for multibyte safety
 		$name = preg_replace('/(s+)$/u', '', $name);
@@ -168,6 +175,7 @@ class PHPhonex
 				continue;
 			}
 		}
+
 		/*
 		 4: Convert to the form Letter Digit Digit Digit by:
 		 	- adding trailing zeros (if there are less than 3 digits), or
