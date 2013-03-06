@@ -12,7 +12,7 @@
             "role": "Developer"
         }
     ],
-    "version": "0.0.1",
+    "version": "0.0.2",
     "require": {
         "php": ">=5.3.0",
         "ext-mbstring": "*"
