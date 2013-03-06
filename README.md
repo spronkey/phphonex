@@ -9,4 +9,12 @@ It's not perfect by any stretch, but it can give you an extra confidence in matc
 
 Usage
 -----
-PHPhonix is a composer-compatible library.
+PHPhonix is a composer-compatible library. It's not on packagist, but to install you just need to add the repository definition to your composer.json file, then run `composer update`
+
+    "repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/spronkey/phphonex"
+		}
+	]
+
