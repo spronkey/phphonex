@@ -9,12 +9,20 @@ It's not perfect by any stretch, but it can give you an extra confidence in matc
 
 Usage
 -----
-PHPhonix is a composer-compatible library. It's not on packagist, but to install you just need to add the repository definition to your composer.json file, then run `composer update`
+PHPhonix is a composer-compatible library. It's not on packagist, but to install you just need to add the repository definition and require to your composer.json file, then run `composer update`
 
     "repositories": [
 		{
 			"type": "vcs",
 			"url": "https://github.com/spronkey/phphonex"
 		}
-	]
+	],
+	"require": {
+		"spronkware/phphonex": "*"
+	}
 
+# Generating a Phonex code
+To generate a Phonex code for a particular string, see the following code:
+```php
+$code = Spronkware\PHPhonex\PHPhonex::phonex('Robert'); // returns R130
+```
