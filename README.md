@@ -9,3 +9,4 @@ It's not perfect by any stretch, but it can give you an extra confidence in matc
 
 Usage
 -----
+PHPhonix is a composer-compatible library.

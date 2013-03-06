@@ -1,5 +1,5 @@
 <?php
-namespace spronkware;
+namespace Spronkware\PHPhonex;
 
 /**
  * Phonex Algorithm class for calculating four character code used to identify equivalent names.
@@ -15,7 +15,7 @@ namespace spronkware;
  * @date March 6, 2013
  * @copyright 
  */
-class PhonexEnglish
+class PHPhonex
 {
 	protected static function isVowelOrY($char)
 	{
@@ -186,73 +186,3 @@ class PhonexEnglish
 		 return ucfirst($code);
 	}
 }
-
-$tests = array(
-	'John'			=>			'G500',
-	'Jonothan'		=>			'G535',
-	'Tom'			=>			'T500',
-	'Thomas'		=>			'T500',
-	'Bob'			=>			'B100',
-	'Robby'			=>			'R100',
-	'Robert'		=>			'R130',
-	'123 testsss'	=>			'T230', 
-	'24/7 test'	=>				'T230', 
-	'ZYX test'	=>				'S232', 
-	'A'	=>						'A000', 
-	'Lee'	=>					'L000', 
-	'Kuhne'	=>					'C500', 
-	'Meyer-Lansky'	=>			'M452', 
-	'Oepping'	=>				'A150', 
-	'Daley'	=>					'D400', 
-	'Dalitz'	=>				'D432', 
-	'Duhlitz'	=>				'D432', 
-	'De Ledes'	=>				'D430', 
-	'Schüßler'	=>				'S246', 
-	'Schmidt'	=>				'S253', 
-	'Sandemann'	=>				'S500', 
-	'Sinatra'	=>				'S536', 
-	'Heinrich'	=>				'A562', 
-	'Hammerschlag'	=>			'A524', 
-	'Williams'	=>				'W450', 
-	'Wilms'	=>					'W500', 
-	'Wilson'	=>				'W250', 
-	'Worms'	=>					'W500', 
-	'Zedlitz'	=>				'S343', 
-	'Zotteldecke'	=>			'S320', 
-	'Scherman'	=>				'S250', 
-	'Schurman'	=>				'S250', 
-	'Sherman'	=>				'S500', 
-	'Shireman'	=>				'S650', 
-	'Shurman'	=>				'S500', 
-	'Euler'	=>					'A460', 
-	'Ellery'	=>				'A460', 
-	'Hilbert'	=>				'A130', 
-	'Heilbronn'	=>				'A165', 
-	'Gauss'	=>					'G000', 
-	'Ghosh'	=>					'G200', 
-	'Knuth'	=>					'N300', 
-	'Kant'	=>					'C530', 
-	'Lloyd'	=>					'L430', 
-	'Ladd'	=>					'L300', 
-	'Lukasiewicz'	=>			'L200', 
-	'Lissajous'	=>				'L200', 
-	'Ashcraft'	=>				'A261', 
-	'Philip'	=>				'F410', 
-	'Fripp'	=>					'F610', 
-	'Czarkowska'	=>			'C200', 
-	'Hornblower'	=>			'A514', 
-	'Looser'	=>				'L260', 
-);
-foreach($tests as $test => $result) {
-	$code = PhonexEnglish::phonex($test);
-	if($code == $result) {
-		echo 'SUCCESS';
-		echo "\t\t".$test."\t\t => \t".$code."\r\n";
-	} else {
-		echo 'FAILURE';
-		echo "\t\t".$test."\t\t => \t".$code." - should be ".$result."\r\n";
-	}
-	
-}
-
-echo 'Schüßler';
